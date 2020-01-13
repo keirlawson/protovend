@@ -1,0 +1,29 @@
+[package]
+name = "protovend"
+version = "4.0.0"
+authors = ["Skyscanner's Lego squad <legosquad@skyscanner.net>"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.8"
+structopt = "0.3"
+semver = { version = "0.9", features = ["serde"]}
+failure = "0.1"
+lazy_static = "1"
+log = "0.4"
+fern = { version = "0.5", features = ["colored"] }
+regex = "1"
+chrono = { version = "0.4", features = ["serde"] }
+walkdir = "2"
+human-panic = "1"
+
+[dependencies.git2]
+# Do no upgrade until https://github.com/rust-lang/git2-rs/issues/470 resolved
+version = "0.9"
+# Disable SSH, https support to simplify cross-compilation
+default-features = false
+
+[dev-dependencies]
+assert_cmd = "0.11"
+tempfile = "3"

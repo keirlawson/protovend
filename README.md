@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Skyscanner/protovend.svg?branch=master)](https://travis-ci.org/Skyscanner/protovend)
+
 # ![protovend](docs/logo.png)
 
 Protovend is a tool for managing your vendored protobuf files with ease. Simply install the tool and you can run it like git from the root of the project.

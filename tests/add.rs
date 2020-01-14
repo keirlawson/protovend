@@ -30,7 +30,7 @@ fn test_add_no_init() {
 
     let status = command(&dir)
         .arg("add")
-        .arg("git@github.com:Skyscanner/protovend-test-protos.git")
+        .arg("https://github.com/Skyscanner/protovend-test-protos.git")
         .status()
         .unwrap();
 
@@ -50,7 +50,7 @@ fn test_add_with_init() {
 
     let status = command(&dir)
         .arg("add")
-        .arg("git@github.com:Skyscanner/protovend-test-protos.git")
+        .arg("https://github.com/Skyscanner/protovend-test-protos.git")
         .status()
         .unwrap();
 
@@ -60,7 +60,7 @@ fn test_add_with_init() {
         "---\
          \nmin_protovend_version: 4.0.0\
          \nvendor:\
-         \n  - url: \"git@github.com:Skyscanner/protovend-test-protos.git\"\
+         \n  - url: \"https://github.com/Skyscanner/protovend-test-protos.git\"\
          \n    branch: master",
     );
 
@@ -86,7 +86,7 @@ fn test_add_to_existing_legacy() {
 
     let status = command(&dir)
         .arg("add")
-        .arg("git@github.com:Skyscanner/protovend-test-protos.git")
+        .arg("https://github.com/Skyscanner/protovend-test-protos.git")
         .status()
         .unwrap();
 
@@ -96,9 +96,9 @@ fn test_add_to_existing_legacy() {
         "---\
          \nmin_protovend_version: 4.0.0\
          \nvendor:\
-         \n  - url: \"git@github.com:Skyscanner/protovend-test-protos.git\"\
-         \n    branch: master\
          \n  - url: \"git@github.com:cell-placement/cell-metadata-service.git\"\
+         \n    branch: master\
+         \n  - url: \"https://github.com/Skyscanner/protovend-test-protos.git\"\
          \n    branch: master",
     );
 
@@ -119,7 +119,7 @@ fn test_add_two() {
 
     let status = command(&dir)
         .arg("add")
-        .arg("git@github.com:Skyscanner/protovend-test-protos.git")
+        .arg("https://github.com/Skyscanner/protovend-test-protos.git")
         .status()
         .unwrap();
 
@@ -139,7 +139,7 @@ fn test_add_two() {
          \nvendor:\
          \n  - url: \"git@github.com:Skyscanner/protovend-test-protos-fake.git\"\
          \n    branch: master\
-         \n  - url: \"git@github.com:Skyscanner/protovend-test-protos.git\"\
+         \n  - url: \"https://github.com/Skyscanner/protovend-test-protos.git\"\
          \n    branch: master",
     );
 

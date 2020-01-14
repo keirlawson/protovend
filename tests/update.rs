@@ -44,7 +44,7 @@ fn test_install_override_commit_hash() {
 
     let status = command(&dir)
         .arg("add")
-        .arg("git@github.com:Skyscanner/protovend-test-protos.git")
+        .arg("https://github.com/Skyscanner/protovend-test-protos.git")
         .arg("--branch=branch-2")
         .status()
         .unwrap();
@@ -59,7 +59,7 @@ fn test_install_override_commit_hash() {
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
 
-    assert!(contents.contains("url: \"git@github.com:Skyscanner/protovend-test-protos.git\""));
+    assert!(contents.contains("url: \"https://github.com/Skyscanner/protovend-test-protos.git\""));
     assert!(contents.contains("branch: branch-2"));
 
     assert!(dir
@@ -110,7 +110,7 @@ updated: 2017-08-14 17:15:13.549503",
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
 
-    assert!(contents.contains("url: \"git@github.com:Skyscanner/protovend-test-protos.git\""));
+    assert!(contents.contains("url: \"https://github.com/Skyscanner/protovend-test-protos.git\""));
     assert!(contents.contains("branch: branch-2"));
     assert!(!contents.contains("thisIsAnOldHash"));
     assert!(contents.contains("min_protovend_version"));

@@ -1,6 +1,7 @@
 os:
   - linux
   - osx
+  - windows
 language: rust
 rust:
   - stable
@@ -18,5 +19,4 @@ script:
   - cargo clippy --verbose -- -D warnings
   - cargo test  --verbose
 # https://docs.travis-ci.com/user/deployment/cargo/
-# https://docs.travis-ci.com/user/multi-os/
 # https://docs.travis-ci.com/user/deployment/releases/

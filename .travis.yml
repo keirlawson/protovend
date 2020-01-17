@@ -12,6 +12,7 @@ jobs:
   fast_finish: true
 before_script:
 - rustup component add rustfmt clippy
+- if [ $TRAVIS_OS_NAME == "windows" ]; then ./.travis/windows_compile_fix.sh; fi
 script:
 - cargo build --verbose
 - cargo fmt --all --verbose -- --check

@@ -1,22 +1,25 @@
 os:
-  - linux
-  # - osx
-  # - windows
+- linux
 language: rust
 rust:
-  - stable
-  - beta
+- stable
+- beta
 cache: cargo
 jobs:
   allow_failures:
-    - rust: beta
+  - rust: beta
   fast_finish: true
 before_script:
-  - rustup component add rustfmt clippy
+- rustup component add rustfmt clippy
 script:
-  - cargo build --verbose
-  - cargo fmt --all --verbose -- --check
-  - cargo clippy --verbose -- -D warnings
-  - cargo test  --verbose
-# https://docs.travis-ci.com/user/deployment/cargo/
-# https://docs.travis-ci.com/user/deployment/releases/
+- cargo build --verbose
+- cargo fmt --all --verbose -- --check
+- cargo clippy --verbose -- -D warnings
+- cargo test  --verbose
+deploy:
+  provider: cargo
+  token:
+    secure: IY7y/5sOtNq4F10kPkDmNyp4VuFvv3sq7W7BdDozqHfmP8gZwhHT5KlTrEG4Vm/q6hS+qtfARTMEeDI75LGPefnw5asXqUCTuiiCa8J4IKDJ0R1T7D0Pri1mG0uGWuPwOlLShQDcEWRXxb5MBca4gnnyo+Tsj7jSFaT04iaBqSTRYq+T+mbRxon4b8bkUWL0SGNxbJQy/g1G1/onmgLE/ZtgwuGv2CuNrugo+8j8WY6zsuOhBp+wcFlwImzdOUis5zwiq2iyy+FhVa8Sedie4wEXPfBr/2ZXbeJ9b07m0JDLEmysm0rH0kvF7NtmdM+rwRiUYuSj3A/Q5/FzFaJLqH5uWB9ElHRIFUL8y/zBj6QUyRCajtzIJesZZVC1tIKzqF74uw6jYEVH/EwoYP7aNxAcpDLj/i3jHQzaq9GOUqgOrnTdrZCYX2Yl8Yt7LjDm6TWhnKC7Sv+0Jmsdtd6K+V0xDRZ87p2m59sPAQdwJY73iT9pnpFQhNdYnZyQCTXa/6wjxLTq0bFI39Y4EnWt9bp9RPiIASAy9Dv+/S2mBWbKvA4B8nv43KrAm0yx8Ooe5D/nwnAGs4br73Fy4a6SiWI8Skjy3S78YbmJw/Rfgv77Uu11NL5K91UiH5O0XqRqt/cfClaFRzNO1ZvziLtYes2Je+cvMEVesXCX1XvEE34=
+  on:
+    tags: true
+    branch: master

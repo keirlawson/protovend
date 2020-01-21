@@ -215,7 +215,7 @@ fn test_install_not_existing() {
 
     let status = command(&dir)
         .arg("add")
-        .arg("git@github.com:Skyscanner/no-such-repo.git")
+        .arg("https://github.com/Skyscanner/no-such-repo.git")
         .status()
         .unwrap();
 

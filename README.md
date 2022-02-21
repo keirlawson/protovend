@@ -176,9 +176,6 @@ cargo clippy
 cargo fmt --all
 ```
 
-## Contributing
-
-To contribute please read our [guidelines](https://github.com/Skyscanner/protovend/blob/main/CONTRIBUTING.md).
 
 ## Attribution
 

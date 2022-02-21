@@ -41,7 +41,7 @@ enum Subcommand {
     ///Add a given git repo to projects metadata file
     Add {
         url: GitUrl,
-        #[structopt(short, long, default_value = "master")]
+        #[structopt(short, long, default_value = "main")]
         branch: String,
     },
     ///Update one or all repos in protovend metadata file to latest version

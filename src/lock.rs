@@ -264,8 +264,7 @@ mod tests {
 
     #[test]
     fn test_correctly_parses_lock() {
-        let lock_contents =
-            "--- \
+        let lock_contents = "--- \
              \nimports: \
              \n  - branch: master \
              \n    commit: a9fef901ae63f689a4180bf8255d16a45baf04a1 \

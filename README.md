@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/Skyscanner/protovend.svg?branch=master)](https://travis-ci.org/Skyscanner/protovend)
 
 # ![protovend](docs/logo.png)
 
@@ -35,8 +34,8 @@ In these examples, we'll be vendoring protos from `somegroup/producer-service` (
 
    ```
    $ protovend install
-   (INFO) Fetching latest commit hash from each new repo in github. Current: master@somegroup/producer-service
-   (INFO) Fetching proto files from github repos. Current: master@somegroup/producer-service
+   (INFO) Fetching latest commit hash from each new repo in github. Current: main@somegroup/producer-service
+   (INFO) Fetching proto files from github repos. Current: main@somegroup/producer-service
    (INFO) Next Steps:
    Check the following protovend generated files and vendored proto directory (containing .proto files) into source control
      - .protovend.yml
@@ -48,8 +47,8 @@ In these examples, we'll be vendoring protos from `somegroup/producer-service` (
 
    ```
    $ protovend update somegroup/producer-service
-   (INFO) Fetching latest commit hash from each new repo in github. Current: master@somegroup/producer-service
-   (INFO) Fetching proto files from github repos. Current: master@somegroup/producer-service
+   (INFO) Fetching latest commit hash from each new repo in github. Current: main@somegroup/producer-service
+   (INFO) Fetching proto files from github repos. Current: main@somegroup/producer-service
    (INFO) Next Steps:
    Check the following protovend generated files and vendored proto directory (containing .proto files) into source control
      - .protovend.yml
@@ -61,8 +60,8 @@ In these examples, we'll be vendoring protos from `somegroup/producer-service` (
 
    ```
    $ protovend update
-   (INFO) Fetching latest commit hash from each new repo in github. Current: master@somegroup/producer-service
-   (INFO) Fetching proto files from github repos. Current: master@somegroup/producer-service
+   (INFO) Fetching latest commit hash from each new repo in github. Current: main@somegroup/producer-service
+   (INFO) Fetching proto files from github repos. Current: main@somegroup/producer-service
    (INFO) Next Steps:
    Check the following protovend generated files and vendored proto directory (containing .proto files) into source control
      - .protovend.yml
@@ -97,7 +96,7 @@ To remove a vendored service the service entry here should be removed.
 ```yml
 min_protovend_version: 1.0.3
 vendor:
-  - branch: master
+  - branch: main
     repo: somegroup/producer-service
 ```
 
@@ -111,7 +110,7 @@ It contains the commit id of the repo during the vendoring process.
 
 ```yml
 imports:
-  - branch: master
+  - branch: main
     commit: 6931b681ddea94753abb40105672c66d7e08d551
     repo: somegroup/producer-service
 min_protovend_version: 1.0.3
@@ -179,7 +178,7 @@ cargo fmt --all
 
 ## Contributing
 
-To contribute please read our [guidelines](https://github.com/Skyscanner/protovend/blob/master/CONTRIBUTING.md).
+To contribute please read our [guidelines](https://github.com/Skyscanner/protovend/blob/main/CONTRIBUTING.md).
 
 ## Attribution
 
